@@ -1,6 +1,6 @@
-# Portfolio
+# manan-portfolio
 
-A static portfolio site built with HTML, CSS, and JavaScript. Edit `index.html` and assets in `src/` to customize for your own use.
+Mannan Portfolio — a static portfolio site built with HTML, CSS, and JavaScript. Edit `index.html` and assets in `src/` to customize.
 
 ## Sections
 
@@ -19,9 +19,9 @@ A static portfolio site built with HTML, CSS, and JavaScript. Edit `index.html` 
 
 ## Deploy
 
-Push this folder to your GitHub repo and enable **GitHub Pages** (Settings → Pages → source: main branch). The site will be available at `https://<your-username>.github.io/<repo-name>/`.
+Push to your GitHub repo and enable **GitHub Pages** (Settings → Pages → source: main branch). The site will be at `https://<your-username>.github.io/<repo-name>/`.
 
-To use a custom domain, add a `CNAME` file in the project root containing your domain (e.g. `www.yoursite.com`).
+To use a custom domain, add a `CNAME` file in the project root with your domain (e.g. `www.yoursite.com`).
 
 ## License
 
