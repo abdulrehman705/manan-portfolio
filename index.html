@@ -94,32 +94,52 @@ What are you doing here?! you sneaky developer...
         </div>
       </div>
       <div class="navbar-tabs" id="navbar-tabs">
+        <div class="navbar-tab-indicator" id="navbar-tab-indicator" aria-hidden="true"></div>
         <ul class="navbar-tabs-ul">
-          <li class="home activeThistab" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="100">
-            <a href="#home" tabindex="0" aria-label="Home menu button">
+          <li class="navbar-tabs-li home activeThistab" data-aos="fade-down" data-aos-delay="100">
+            <a href="#home" tabindex="0" aria-label="Home menu button" class="navbar-tab-link">
               &#60;/Home&#62;
             </a>
           </li>
-
-          <li class="about" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="300">
-            <a href="#about" aria-label="about menu button">
+          <li class="navbar-tabs-li about" data-aos="fade-down" data-aos-delay="300">
+            <a href="#about" aria-label="about menu button" class="navbar-tab-link">
               &#60;/AboutMe&#62;
             </a>
           </li>
-
-          <li class="skills" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="500">
-            <a href="#skills" aria-label="skills menu button">
+          <li class="navbar-tabs-li skills" data-aos="fade-down" data-aos-delay="500">
+            <a href="#skills" aria-label="skills menu button" class="navbar-tab-link">
               &#60;/Skills&#62;
             </a>
           </li>
-
-          <li class="projects" class="navbar-tabs-li" data-aos="fade-down" data-aos-delay="700">
-            <a href="#projects" aria-label="projects menu button">
+          <li class="navbar-tabs-li projects" data-aos="fade-down" data-aos-delay="700">
+            <a href="#projects" aria-label="projects menu button" class="navbar-tab-link">
               &#60;/Projects&#62;
             </a>
           </li>
         </ul>
       </div>
+      <style>
+        .navbar-tabs-ul {
+          display: flex;
+          gap: 1.5rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .navbar-tabs-li {
+          border-radius: 24px;
+          transition: background 0.2s;
+        }
+        .navbar-tab-link {
+          display: inline-block;
+          padding: 0.9rem 2rem;
+          border-radius: 24px;
+          text-decoration: none;
+          color: inherit;
+          background: none;
+          transition: background 0.2s;
+        }
+      </style>
       <!-- navbar tabs ends -->
     </div>
   </header>
