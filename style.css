@@ -447,6 +447,46 @@ body.light-mode .navbar-tab-indicator {
     font-weight: 100
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    height: 100%
+}
+
+.navbar-brand .logo {
+    width: auto;
+    min-width: 50px;
+    flex-shrink: 0
+}
+
+.navbar-name {
+    display: flex;
+    align-items: center;
+    font-family: fira code, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(-45deg, var(--color-light-blue), var(--color-light-purple), var(--color-light-blue), var(--color-light-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400% 400%;
+    -webkit-animation: 3s infinite gradient;
+    animation: 3s infinite gradient;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease
+}
+
+.navbar.navbar-scrolled .navbar-name {
+    max-width: 280px;
+    opacity: 1
+}
+
 .logo {
     width: 10%;
     height: 100%;
