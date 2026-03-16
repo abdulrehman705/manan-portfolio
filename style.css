@@ -126,46 +126,51 @@ html {
     background-color: #8000ff
 }
 
-.cursor-inner {
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-light-blue)
+/* ===== ONEKO CURSOR: must stay on top of entire page =====
+ * Cat layer is appended to <html>, not <body>, so no body content can cover it.
+ * Do not add z-index above 999999 to any element inside body.
+ */
+html {
+    position: relative;
+    z-index: 0
 }
 
-.cursor-outer {
-    width: 35px;
-    height: 35px;
-    border: 2px solid #fff
+body {
+    position: relative;
+    z-index: 0;
+    isolation: isolate
 }
 
-.cursor-inner,
-.cursor-outer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none
+#oneko-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    z-index: 2147483647 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
 }
+
+#oneko {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+    pointer-events: none !important;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* System cursor kept visible everywhere; cat is an extra visual that follows */
 
 .setting-container,
 .settingactivate {
     transform-origin: left;
     transition-duration: .5s
-}
-
-.cursor-inner.hover {
-    width: 25px;
-    height: 25px;
-    transition: .2s;
-    mix-blend-mode: difference
-}
-
-.cursor-outer.hover {
-    width: 50px;
-    height: 50px;
-    transition: .2s
 }
 
 /* Dots removed from navbar - active tab uses background instead */
@@ -1257,7 +1262,8 @@ footer {
     justify-content: space-between;
     transition-duration: .3s;
     border-radius: 30px;
-    border: 1px solid var(--tech-stack-box-border-color)
+    border: 1px solid var(--tech-stack-box-border-color);
+    background: linear-gradient(to bottom right, var(--tech-stack-box-first-color), var(--tech-stack-box-second-color))
 }
 
 .info-div {
@@ -1299,9 +1305,13 @@ footer {
 }
 
 .ProjectDescription {
-    color: gray;
+    color: var(--color-gray);
     font-size: 1.7rem;
     font-weight: 400
+}
+
+body.light-mode .ProjectDescription {
+    color: #555
 }
 
 .project-buttons {
@@ -1699,8 +1709,8 @@ footer {
     }
 
     .blob,
-    .cursor-inner,
-    .cursor-outer,
+    #oneko-container,
+    #oneko,
     .navbar-tabs-ul {
         display: none
     }
