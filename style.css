@@ -1338,8 +1338,11 @@ body.light-mode .ProjectDescription {
 }
 
 .cta {
-    padding: 12px 18px;
-    transition: .2s;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    transition: width .3s, border-radius .3s;
     border: none;
     background: 0 0;
     cursor: pointer;
@@ -1360,28 +1363,56 @@ body.light-mode .ProjectDescription {
     transition: .3s
 }
 
-.cta span {
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: .05em;
-    color: var(--color-light-blue)
+.cta-sign {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: width .3s
 }
 
-.cta svg {
-    top: 0;
-    margin-left: 10px;
+.cta-sign svg {
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke: var(--color-light-blue);
     stroke-width: 2;
-    transform: translateX(-5px);
-    transition: .3s
+    transition: stroke .3s
 }
 
-.cta:hover svg {
-    stroke: white;
-    transform: translateX(0)
+.cta:hover .cta-sign svg {
+    stroke: white
+}
+
+.cta-text {
+    position: absolute;
+    right: 0;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 6px;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--color-light-blue);
+    transition: opacity .3s, width .3s
+}
+
+.cta:hover {
+    width: 120px;
+    border-radius: 50px
+}
+
+.cta:hover .cta-sign {
+    width: 38%
+}
+
+.cta:hover .cta-text {
+    opacity: 1;
+    width: 62%
 }
 
 .cta:active {
