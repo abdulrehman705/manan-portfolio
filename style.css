@@ -1,19 +1,16 @@
-#labelforsetting,
 #labelforvisualmode,
 #switchforvisualmode:checked+#labelforvisualmode {
     background-repeat: no-repeat;
     background-position: center
 }
 
-#labelforsetting,
 #labelforsound {
     height: 40px;
     background-size: 60%
 }
 
 #preloader,
-.invertapplied,
-.invertsettinglabel {
+.invertapplied {
     filter: invert(1)
 }
 
@@ -167,12 +164,6 @@ body {
 
 /* System cursor kept visible everywhere; cat is an extra visual that follows */
 
-.setting-container,
-.settingactivate {
-    transform-origin: left;
-    transition-duration: .5s
-}
-
 /* Dots removed from navbar - active tab uses background instead */
 .navbar-tabs-ul .activeThistab:before,
 .navbar-tabs-ul li:hover:before {
@@ -208,61 +199,31 @@ body.light-mode .navbar-tabs-li.activeThistab {
     --tech-stack-box-border-color: #dad5cf
 }
 
-.setting-container {
-    width: 60px;
-    height: 50px;
-    margin-left: 50px;
+.header-actions {
+    position: fixed;
+    top: 35px;
+    right: 20px;
+    height: 80px;
     display: flex;
     align-items: center;
-    gap: 30px;
-    padding: 20px 0
-}
-
-#labelforsetting {
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    background-image: url(src/svg/settings-svgrepo-com.svg);
-    transition-duration: .5s;
-    cursor: pointer
+    gap: 12px;
+    z-index: 999
 }
 
 .soundtogglebuttoncontainer,
 .visualmodetogglebuttoncontainer {
     align-items: center;
     width: fit-content;
-    transition-duration: .3s
-}
-
-.settingactivate {
-    width: 200px
-}
-
-.visualmodetogglebuttoncontainer {
     height: fit-content;
     display: flex;
-    justify-content: center;
-    transform: translate(-50px) scale(0)
+    justify-content: center
 }
 
-.visualmodeshow {
-    transition-duration: .3s;
-    transform: translate(0) scale(1)
-}
-
-#switchforsetting,
 #switchforsound,
 #switchforvisualmode,
 .hamburger,
 .mobiletogglemenu {
     display: none
-}
-
-#switchforsetting:checked+#labelforsetting {
-    transform: rotate(180deg);
-    transition-duration: .5s
 }
 
 #labelforvisualmode {
@@ -282,12 +243,6 @@ body.light-mode .navbar-tabs-li.activeThistab {
     background-size: 60%
 }
 
-.soundtogglebuttoncontainer {
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    transform: translate(-130px) scale(0)
-}
 
 #labelforsound,
 #preloader {
@@ -295,13 +250,6 @@ body.light-mode .navbar-tabs-li.activeThistab {
     align-items: center;
     background-repeat: no-repeat;
     background-position: center
-}
-
-.soundmodeshow {
-    transition-delay: .1s;
-    transition-duration: .5s;
-    display: inline-block;
-    transform: translate(0) scale(1)
 }
 
 .logo,
@@ -1793,6 +1741,10 @@ footer {
 
 @media screen and (max-width:998px) {
 
+    .header-actions {
+        right: 5.5rem
+    }
+
     #hamburger-button,
     .hamburger {
         background-color: transparent
@@ -2028,10 +1980,6 @@ footer {
         align-items: flex-start;
         justify-content: flex-start;
         gap: 20px
-    }
-
-    .setting-container {
-        margin-left: 0
     }
 
     .dp::after,
