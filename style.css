@@ -1419,6 +1419,79 @@ body.light-mode .ProjectDescription {
     transform: scale(.95)
 }
 
+/* =====================================================
+   MORE PROJECTS BUTTON — centered, full text by default,
+   arrow slides in smoothly on hover
+   ===================================================== */
+.project-box-wrapper--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cta--more-projects {
+    margin-top: 2rem;
+    width: 180px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta--more-projects::before {
+    border-radius: 50px;
+    width: 100%;
+}
+
+/* Arrow hidden by default — slides in on hover */
+.cta--more-projects .cta-sign {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.25s ease;
+}
+
+/* Text always visible, static positioned — !important needed to override base .cta-text cascade */
+.cta--more-projects .cta-text {
+    width: auto !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    padding-left: 0;
+    padding-right: 4px;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    color: var(--color-light-blue);
+    transition: padding-left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover: expand width and slide arrow in */
+.cta--more-projects:hover {
+    width: 220px;
+}
+
+.cta--more-projects:hover .cta-sign {
+    width: 32px;
+    opacity: 1;
+}
+
+.cta--more-projects:hover .cta-text {
+    width: auto !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    padding-left: 4px;
+}
+
 #backtotopbutton {
     position: fixed;
     right: 10px;
@@ -1739,9 +1812,11 @@ footer {
         font-size: 55%
     }
 
+    /* FIX: Hide entire navbar tabs section (wrapper + ul + indicator) on mobile */
     .blob,
     #oneko-container,
     #oneko,
+    .navbar-tabs,
     .navbar-tabs-ul {
         display: none
     }
