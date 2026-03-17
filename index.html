@@ -207,6 +207,16 @@ What are you doing here?! you sneaky developer...
           </a>
         </li>
       </ul>
+      <div class="mobile-menu-actions" aria-label="Appearance and sound">
+        <div class="visualmodetogglebuttoncontainer">
+          <input type="checkbox" id="switchforvisualmode-mobile" onchange="syncVisualFromMobile()" />
+          <label for="switchforvisualmode-mobile" class="labelforvisualmode-mobile" tabindex="0" aria-label="Switch appearance"></label>
+        </div>
+        <div class="soundtogglebuttoncontainer">
+          <input type="checkbox" id="switchforsound-mobile" onchange="syncSoundFromMobile()" />
+          <label for="switchforsound-mobile" class="labelforsound-mobile needtobeinvert" tabindex="0" aria-label="Switch sound"></label>
+        </div>
+      </div>
     </div>
     <!-- mobile toggle menu ends -->
 
