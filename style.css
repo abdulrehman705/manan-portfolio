@@ -123,10 +123,6 @@ html {
     background-color: #8000ff
 }
 
-/* ===== ONEKO CURSOR: must stay on top of entire page =====
- * Cat layer is appended to <html>, not <body>, so no body content can cover it.
- * Do not add z-index above 999999 to any element inside body.
- */
 html {
     position: relative;
     z-index: 0
