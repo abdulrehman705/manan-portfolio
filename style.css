@@ -1583,17 +1583,35 @@ footer {
 
 .SocialHandle {
     fill: white;
-    width: 60%
+    width: 60%;
+    transition: fill .25s ease
 }
 
 #GmailLogo {
-    height: 70%
+    height: 70%;
+    transition: fill .25s ease
 }
 
 .social-media-container a:hover {
-    box-shadow: 0 0 50px 100px #8000ff inset;
-    transition-duration: 1s;
+    box-shadow: 0 0 20px 30px rgba(128, 0, 255, 0.15) inset;
+    transition-duration: 0.4s;
     border: none
+}
+
+.logo-insta:hover .SocialHandle {
+    fill: url(#insta-gradient)
+}
+
+.logo-linkedin:hover .SocialHandle {
+    fill: #0A66C2
+}
+
+.logo-github:hover .SocialHandle {
+    fill: #f0f6fc
+}
+
+.logo-email:hover #GmailLogo {
+    fill: #EA4335
 }
 
 .social-media-container a::before {
